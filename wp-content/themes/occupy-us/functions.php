@@ -28,3 +28,12 @@ function bdn_split_post( $post_array = array() ) {
     return $post_array;
  
 }
+// adding the facebook and twitter links to the user profile
+function occupy_add_user_fields( $contactmethods ) {
+// Add Facebook
+$contactmethods['user_fb'] = 'Facebook';
+// Add Twitter
+$contactmethods['user_tw'] = 'Twitter';
+return $contactmethods;
+}
+add_filter('user_contactmethods','occupy_add_user_fields',10,1);
