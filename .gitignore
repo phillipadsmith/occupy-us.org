@@ -1,4 +1,5 @@
 .htaccess
+.svn
 .DS_Store
 wp-*.php
 xmlrpc.php
