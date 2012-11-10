@@ -37,3 +37,14 @@ $contactmethods['user_tw'] = 'Twitter';
 return $contactmethods;
 }
 add_filter('user_contactmethods','occupy_add_user_fields',10,1);
+
+
+################################################################################
+// Loading All CSS Stylesheets
+################################################################################
+function occupy_css_loader() {
+    wp_enqueue_style('bootstrapwp', get_template_directory_uri().'/css/bootstrapwp.css', false ,'0.90', 'all' );
+    wp_enqueue_style('prettify', get_template_directory_uri().'/js/google-code-prettify/prettify.css', false ,'1.0', 'all' );
+    wp_enqueue_style('occupy', '/wp-content/themes/occupy-us/style.css', false ,'0.01', 'all' );
+  }
+add_action('wp_enqueue_scripts', 'occupy_css_loader');

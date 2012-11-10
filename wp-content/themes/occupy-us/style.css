@@ -4,6 +4,11 @@ Theme URI:      http://occupy-us.org/
 Description:    Child theme for the BootstrapWP theme 
 Author:         Phillip Smith
 Author URI:     http://phillipadsmith.com
-Template:       bootstrapwp-87
+Template:       bootstrapwp-90
 Version:        0.1.0
 */
+/* line 11, /Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less */
+@media -sass-debug-info{filename{font-family:"/Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less";}line{font-family:"11";}}
+body {
+  background: #eee;
+}
