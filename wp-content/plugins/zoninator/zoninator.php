@@ -2,11 +2,11 @@
 /*
 Plugin Name: Zone Manager (Zoninator)
 Description: Curation made easy! Create "zones" then add and order your content!
-Author: Mohammad Jangda
-Version: 0.2
-Author URI: http://digitalize.ca
+Author: Mohammad Jangda, Automattic
+Version: 0.4
+Author URI: http://vip.wordpress.com
 
-Copyright 2010-2011 Mohammad Jangda / Bangor Daily News
+Copyright 2010-2012 Mohammad Jangda, Automattic
 
 This plugin was built by Mohammad Jangda in conjunction with William Davis and the Bangor Daily News.
 
@@ -30,7 +30,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 if( ! class_exists( 'Zoninator' ) ) :
 
-define( 'ZONINATOR_VERSION', '0.2' );
+define( 'ZONINATOR_VERSION', '0.4' );
 define( 'ZONINATOR_PATH', dirname( __FILE__ ) );
 define( 'ZONINATOR_URL', trailingslashit( plugins_url( '', __FILE__ ) ) );
 
@@ -73,6 +73,7 @@ class Zoninator
 		
 		$this->zone_lock_period = apply_filters( 'zoninator_zone_lock_period', $this->zone_lock_period );
 		$this->zone_max_lock_period = apply_filters( 'zoninator_zone_max_lock_period', $this->zone_max_lock_period );
+		$this->posts_per_page = apply_filters( 'zoninator_posts_per_page', $this->posts_per_page );
 	}
 	
 	function init() {
@@ -91,6 +92,7 @@ class Zoninator
 				'query_var' => false,
 				'rewrite' => false,
 				'public' => false,
+
 			) );
 		}
 		
@@ -131,8 +133,7 @@ class Zoninator
 
 	function admin_enqueue_scripts() {
 		if( $this->is_zoninator_page() ) {
-			wp_enqueue_script( 'zoninator-jquery-ui', ZONINATOR_URL . 'js/jquery-ui/jquery-ui-zoninator.min.js', array( 'jquery' ), ZONINATOR_VERSION, true );
-			wp_enqueue_script( 'zoninator-js', ZONINATOR_URL . 'js/zoninator.js', array( 'jquery', 'zoninator-jquery-ui' ), ZONINATOR_VERSION, true );
+			wp_enqueue_script( 'zoninator-js', ZONINATOR_URL . 'js/zoninator.js', array( 'jquery', 'jquery-ui-core', 'jquery-ui-widget', 'jquery-ui-mouse', 'jquery-ui-position', 'jquery-ui-sortable', 'jquery-ui-autocomplete' ), ZONINATOR_VERSION, true );
 			
 			$options = array(
 				'baseUrl' => $this->_get_zone_page_url(),
@@ -413,6 +414,8 @@ class Zoninator
 					<div class="zone-posts-wrapper <?php echo ! $this->_current_user_can_manage_zones( $zone_id ) || $zone_locked ? 'readonly' : ''; ?>">
 						<?php if( $zone_id ) : ?>
 							<h3><?php _e( 'Zone Content', 'zoninator' ); ?></h3>
+						
+							<?php $this->zone_admin_recent_posts_dropdown( $zone_id ); ?>
 							
 							<?php $this->zone_admin_search_form(); ?>
 							
@@ -477,6 +480,40 @@ class Zoninator
 		
 		<div class="row-actions">
 			<?php echo implode( ' | ', $action_links ); ?>
+		</div>
+		<?php
+	}
+
+	function zone_admin_recent_posts_dropdown( $zone_id ) {
+
+		$limit = $this->posts_per_page;
+		$post_types = $this->get_supported_post_types();
+		$zone_posts = $this->get_zone_posts( $zone_id );
+		$zone_post_ids = wp_list_pluck( $zone_posts, 'ID' );
+
+		$args = apply_filters( 'zoninator_recent_posts_args', array(
+			'posts_per_page' => $limit,
+			'order' => 'DESC',
+			'orderby' => 'post_date',
+			'post_type' => $post_types,
+			'ignore_sticky_posts' => true,
+			'post_status' => array( 'publish', 'future' ),
+			'post__not_in' => $zone_post_ids,
+		) );
+
+		$latest_query = new WP_Query( $args );
+		?>
+		<div class="zone-search-wrapper">
+			<label for="zone-post-search-latest"><?php _e( 'Add Recent Content', 'zoninator' );?></label><br />
+			<select name="search-posts" id="zone-post-latest">
+				<option value="">Choose latest post</option>
+				<?php			
+				while ( $latest_query->have_posts() ) : $latest_query->the_post();
+					echo sprintf( '<option value="%d">%s</option>', get_the_ID(), get_the_title() );
+				endwhile;
+				wp_reset_postdata();
+				?>
+			</select>
 		</div>
 		<?php
 	}
@@ -630,7 +667,6 @@ class Zoninator
 				's' => $q,
 				'post__not_in' => $exclude,
 				'posts_per_page' => $limit,
-				'showposts' => $limit,
 				'post_type' => $post_types,
 				'post_status' => array( 'publish', 'future' ),
 				'order' => 'DESC',
