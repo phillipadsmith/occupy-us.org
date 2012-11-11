@@ -8,6 +8,124 @@ Template:       bootstrapwp-90
 Version:        0.1.0
 */
 
+/* 
+Colours:
+#2e3e69 Blue
+#8e2c1a Red
+*/
+
+// Grays
+// -------------------------
+@black:                 #000;
+@grayDarker:            #222;
+@grayDark:              #333;
+@gray:                  #555;
+@grayLight:             #999;
+@grayLighter:           #eee;
+@white:                 #fff;
+
+
+// Accent colors
+// -------------------------
+@blue:                  #049cdb;
+@blueDark:              #0064cd;
+@green:                 #46a546;
+@red:                   #9d261d;
+@yellow:                #ffc40d;
+@orange:                #f89406;
+@pink:                  #c3325f;
+@purple:                #7a43b6;
+
+
+// Scaffolding
+// -------------------------
+@bodyBackground:        @grayLighter;
+@textColor:             @grayDark;
+
+
+// Links
+// -------------------------
+@linkColor:             #2e3e69;
+@linkColorHover:        darken(@linkColor, 15%);
+
+
+// Typography
+// -------------------------
+@sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+@serifFontFamily:       Georgia, "Times New Roman", Times, serif;
+@monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
+
+@baseFontSize:          14px;
+@baseFontFamily:        @sansFontFamily;
+@baseLineHeight:        20px;
+@altFontFamily:         @serifFontFamily;
+
+@headingsFontFamily:    inherit; // empty to use BS default, @baseFontFamily
+@headingsFontWeight:    bold;    // instead of browser default, bold
+@headingsColor:         inherit; // empty to use BS default, @textColor
+
 body {
-    background: #eee;
+    background: @bodyBackground;
 }
+
+a, a:link {
+    color: @linkColor;
+}
+a:hover {
+    color: @linkColorHover;
+}
+
+.nav > li > a:hover {
+  text-decoration: none;
+  background-color: darken(@grayLighter, 10%);
+}
+// Active state
+.nav-pills > .current_page_item > a,
+.nav-pills > .current_page_item > a:hover {
+  color: @white;
+  background-color: @linkColor;
+}
+
+header a.brand-small {
+    background: url('/wp-content/themes/occupy-us/img/logo_with_text_mobile.png') no-repeat top center;
+    display: block;
+    height: 100px;
+    text-indent: -5000px;
+    margin: 10px 0 10px 0;
+}
+header a.brand-large {
+    background: url('/wp-content/themes/occupy-us/img/logo_with_text.png') no-repeat top center;
+    display: block;
+    height: 131px;
+    text-indent: -5000px;
+    margin: 10px 0 10px 0;
+}
+.navbar-relative-top .navbar-inner {
+    //background-image: none;
+    background: #8e2c1a;
+    border: none;
+}
+
+// On category pages
+.jumbotron {
+    background: none;
+    box-shadow: none;
+    border: none;
+    color: @grayDarker;
+}
+.jumbotron::after {
+    background: none;
+}
+
+// For mobile
+
+.wp-post-image {
+    margin-bottom: 10px;
+}
+
+//.post-featured-image {
+	//overflow:hidden; /* this is important */
+    //}    
+    //.post-featured-image img {
+        //margin: -20% 0 -20% 0;
+//}

@@ -48,3 +48,19 @@ function occupy_css_loader() {
     wp_enqueue_style('occupy', '/wp-content/themes/occupy-us/style.css', false ,'0.01', 'all' );
   }
 add_action('wp_enqueue_scripts', 'occupy_css_loader');
+
+/*
+| -------------------------------------------------------------------
+| Adding Post Thumbnails and Image Sizes
+| -------------------------------------------------------------------
+| */
+if ( function_exists( 'add_theme_support' ) ) {
+  add_theme_support( 'post-thumbnails' );
+  set_post_thumbnail_size( 160, 120 ); // 160 pixels wide by 120 pixels high
+}
+
+if ( function_exists( 'add_image_size' ) ) {
+  add_image_size( 'bootstrap-small', 260, 180 ); // 260 pixels wide by 180 pixels high
+  add_image_size( 'bootstrap-medium', 360, 268 ); // 360 pixels wide by 268 pixels high
+  add_image_size( 'bootstrap-wide', 768, 600 ); // 360 pixels wide by 268 pixels high
+}
