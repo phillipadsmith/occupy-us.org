@@ -57,7 +57,7 @@
     </header>
     <div class="container">
     <div class="row">
-    <div class="span8 offset2">
+    <div class="span8 offset2 top-nav">
 <?php $defaults = array(
 	'theme_location'  => '',
 	'menu'            => 'main-menu', 
