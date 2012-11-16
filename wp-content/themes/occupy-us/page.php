@@ -15,17 +15,13 @@
 get_header(); ?>
 <?php while ( have_posts() ) : the_post(); ?>
    <div class="container">
-    <header class="page-title">
-        <h1><?php the_title();?></h1>
-      </header>
         <div class="row content">
-<div class="span8">
-
+            <div class="span8 offset2">
+                <header class="page-title">
+                    <h1><?php the_title();?></h1>
+                </header>
             <?php the_content();?>
 <?php endwhile; // end of the loop. ?>
           </div><!-- /.span8 -->
-
-          <?php get_sidebar(); ?>
-
-
+        </div><!-- /.row .content -->
 <?php get_footer(); ?>

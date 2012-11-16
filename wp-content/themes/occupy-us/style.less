@@ -6,13 +6,13 @@ Author:         Phillip Smith
 Author URI:     http://phillipadsmith.com
 Template:       bootstrapwp-90
 Version:        0.1.0
-*/
+ */
 
 /* 
 Colours:
 #2e3e69 Blue
 #8e2c1a Red
-*/
+ */
 
 // Grays
 // -------------------------
@@ -75,15 +75,47 @@ a:hover {
     color: @linkColorHover;
 }
 
+
+h3 {
+    line-height: 30px;
+}
+
+.navbar {
+    border-top: 1px solid @white;
+    margin-bottom: 10px;
+}
+.nav-collapse {
+    border-bottom: 1px solid @white;
+}
+ul.nav {
+    margin-bottom: 10px;
+}
+.nav {
+    margin-bottom: 0px;
+}
+.navbar .btn-navbar {
+    margin-bottom: 4px;
+}
+
 .nav > li > a:hover {
-  text-decoration: none;
-  background-color: darken(@grayLighter, 10%);
+    text-decoration: none;
+    background-color: darken(@grayLighter, 10%);
 }
 // Active state
 .nav-pills > .current_page_item > a,
 .nav-pills > .current_page_item > a:hover {
-  color: @white;
-  background-color: @linkColor;
+    color: @white;
+    background-color: @linkColor;
+}
+.nav-collapse .nav > li > a {
+    color: @linkColor;
+}
+.nav-collapse .nav > .current_page_item > a {
+    color: @white;
+}
+.nav-collapse .nav > li > a:hover, .nav-collapse .dropdown-menu a:hover {
+    background-color: darken(@grayLighter, 10%);
+
 }
 
 header a.brand-small {
@@ -122,10 +154,3 @@ header a.brand-large {
 .wp-post-image {
     margin-bottom: 10px;
 }
-
-//.post-featured-image {
-	//overflow:hidden; /* this is important */
-    //}    
-    //.post-featured-image img {
-        //margin: -20% 0 -20% 0;
-//}

@@ -57,7 +57,7 @@
     </header>
     <div class="container">
     <div class="row">
-    <div class="span12">
+    <div class="span8 offset2">
 <?php $defaults = array(
 	'theme_location'  => '',
 	'menu'            => 'main-menu', 
@@ -76,8 +76,21 @@
 	'depth'           => 0,
 	'walker'          => ''
 ); ?>
-
+ 
+      <!-- Everything you want hidden at 940px or less, place within here -->
+<div class="navbar">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+</div>
+      <div class="nav-collapse collapse">
+        <!-- .nav, .navbar-search, .navbar-form, etc -->
 <?php wp_nav_menu( $defaults ); ?>
+      </div>
+ 
     </div>
     </div>
     </div>

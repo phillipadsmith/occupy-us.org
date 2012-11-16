@@ -14,27 +14,23 @@
 get_header(); ?>
 <?php while ( have_posts() ) : the_post(); ?>
    <div class="container">
+        <div class="row content">
+            <div class="span8 offset2">
       <header class="post-title">
         <h1><?php the_title();?></h1>
       </header>
         <div class="post-featured-image"><?php // Checking for a post thumbnail
         if ( has_post_thumbnail() ) ?>
         <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-          <?php the_post_thumbnail('bootstrap-wide');?></a>
-        </div><!-- /.span2 -->
-        <div class="row content">
-<div class="span8">
-   <p class="meta"><?php echo bootstrapwp_posted_on();?></p>
+          <?php the_post_thumbnail('full');?></a>
+        </div>
+        <p class="meta"><?php echo bootstrapwp_posted_on();?></p>
             <?php the_content();?>
             <?php the_tags( '<p>Tags: ', ', ', '</p>'); ?>
+ <?php bootstrapwp_content_nav('nav-below');?>
 <?php endwhile; // end of the loop. ?>
 <hr />
  <?php comments_template(); ?>
-
- <?php bootstrapwp_content_nav('nav-below');?>
-
           </div><!-- /.span8 -->
-          <?php get_sidebar('blog'); ?>
-
-
+        </div><!-- /.row .content -->
 <?php get_footer(); ?>

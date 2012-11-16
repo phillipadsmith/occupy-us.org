@@ -9,10 +9,10 @@
  */
 
 get_header(); ?>
-  <div class="container">
+<div class="container">
 
 <div class="row content">
-  <div class="span8">
+  <div class="span8 offset2">
     <?php
               // Blog post query
     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -22,12 +22,11 @@ get_header(); ?>
       <a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><h3><?php the_title();?></h3></a>
       <p class="meta"><?php echo bootstrapwp_posted_on();?></p>
       <div class="row">
-        <div class="span3"><?php // Checking for a post thumbnail
+        <div class="span8"><?php // Checking for a post thumbnail
         if ( has_post_thumbnail() ) ?>
         <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-          <?php the_post_thumbnail('bootstrap-medium');?></a>
-        </div><!-- /.span2 -->
-        <div class="span5">
+          <?php the_post_thumbnail('full');?></a>
+
          <?php the_excerpt();?>
        </div><!-- /.span6 -->
      </div><!-- /.row -->
@@ -37,5 +36,5 @@ get_header(); ?>
  <?php bootstrapwp_content_nav('nav-below');?>
 
 </div><!-- /.span8 -->
-<?php get_sidebar('home'); ?>
+</div><!-- /.row .content -->
 <?php get_footer(); ?>

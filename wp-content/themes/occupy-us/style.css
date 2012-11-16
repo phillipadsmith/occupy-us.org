@@ -6,12 +6,12 @@ Author:         Phillip Smith
 Author URI:     http://phillipadsmith.com
 Template:       bootstrapwp-90
 Version:        0.1.0
-*/
+ */
 /* 
 Colours:
 #2e3e69 Blue
 #8e2c1a Red
-*/
+ */
 /* line 67, /Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less */
 @media -sass-debug-info{filename{font-family:"/Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less";}line{font-family:"67";}}
 body {
@@ -28,21 +28,68 @@ a:link {
 a:hover {
   color: #171f34;
 }
-/* line 78, /Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less */
-@media -sass-debug-info{filename{font-family:"/Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less";}line{font-family:"78";}}
+/* line 79, /Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less */
+@media -sass-debug-info{filename{font-family:"/Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less";}line{font-family:"79";}}
+h3 {
+  line-height: 30px;
+}
+/* line 83, /Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less */
+@media -sass-debug-info{filename{font-family:"/Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less";}line{font-family:"83";}}
+.navbar {
+  border-top: 1px solid #ffffff;
+  margin-bottom: 10px;
+}
+/* line 87, /Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less */
+@media -sass-debug-info{filename{font-family:"/Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less";}line{font-family:"87";}}
+.nav-collapse {
+  border-bottom: 1px solid #ffffff;
+}
+/* line 90, /Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less */
+@media -sass-debug-info{filename{font-family:"/Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less";}line{font-family:"90";}}
+ul.nav {
+  margin-bottom: 10px;
+}
+/* line 93, /Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less */
+@media -sass-debug-info{filename{font-family:"/Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less";}line{font-family:"93";}}
+.nav {
+  margin-bottom: 0px;
+}
+/* line 96, /Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less */
+@media -sass-debug-info{filename{font-family:"/Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less";}line{font-family:"96";}}
+.navbar .btn-navbar {
+  margin-bottom: 4px;
+}
+/* line 100, /Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less */
+@media -sass-debug-info{filename{font-family:"/Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less";}line{font-family:"100";}}
 .nav > li > a:hover {
   text-decoration: none;
   background-color: #d5d5d5;
 }
-/* line 83, /Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less */
-@media -sass-debug-info{filename{font-family:"/Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less";}line{font-family:"83";}}
+/* line 105, /Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less */
+@media -sass-debug-info{filename{font-family:"/Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less";}line{font-family:"105";}}
 .nav-pills > .current_page_item > a,
 .nav-pills > .current_page_item > a:hover {
   color: #ffffff;
   background-color: #2e3e69;
 }
-/* line 89, /Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less */
-@media -sass-debug-info{filename{font-family:"/Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less";}line{font-family:"89";}}
+/* line 110, /Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less */
+@media -sass-debug-info{filename{font-family:"/Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less";}line{font-family:"110";}}
+.nav-collapse .nav > li > a {
+  color: #2e3e69;
+}
+/* line 113, /Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less */
+@media -sass-debug-info{filename{font-family:"/Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less";}line{font-family:"113";}}
+.nav-collapse .nav > .current_page_item > a {
+  color: #ffffff;
+}
+/* line 116, /Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less */
+@media -sass-debug-info{filename{font-family:"/Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less";}line{font-family:"116";}}
+.nav-collapse .nav > li > a:hover,
+.nav-collapse .dropdown-menu a:hover {
+  background-color: #d5d5d5;
+}
+/* line 121, /Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less */
+@media -sass-debug-info{filename{font-family:"/Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less";}line{font-family:"121";}}
 header a.brand-small {
   background: url('/wp-content/themes/occupy-us/img/logo_with_text_mobile.png') no-repeat top center;
   display: block;
@@ -50,8 +97,8 @@ header a.brand-small {
   text-indent: -5000px;
   margin: 10px 0 10px 0;
 }
-/* line 96, /Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less */
-@media -sass-debug-info{filename{font-family:"/Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less";}line{font-family:"96";}}
+/* line 128, /Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less */
+@media -sass-debug-info{filename{font-family:"/Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less";}line{font-family:"128";}}
 header a.brand-large {
   background: url('/wp-content/themes/occupy-us/img/logo_with_text.png') no-repeat top center;
   display: block;
@@ -59,27 +106,27 @@ header a.brand-large {
   text-indent: -5000px;
   margin: 10px 0 10px 0;
 }
-/* line 103, /Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less */
-@media -sass-debug-info{filename{font-family:"/Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less";}line{font-family:"103";}}
+/* line 135, /Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less */
+@media -sass-debug-info{filename{font-family:"/Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less";}line{font-family:"135";}}
 .navbar-relative-top .navbar-inner {
   background: #8e2c1a;
   border: none;
 }
-/* line 110, /Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less */
-@media -sass-debug-info{filename{font-family:"/Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less";}line{font-family:"110";}}
+/* line 142, /Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less */
+@media -sass-debug-info{filename{font-family:"/Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less";}line{font-family:"142";}}
 .jumbotron {
   background: none;
   box-shadow: none;
   border: none;
   color: #222222;
 }
-/* line 116, /Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less */
-@media -sass-debug-info{filename{font-family:"/Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less";}line{font-family:"116";}}
+/* line 148, /Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less */
+@media -sass-debug-info{filename{font-family:"/Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less";}line{font-family:"148";}}
 .jumbotron::after {
   background: none;
 }
-/* line 122, /Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less */
-@media -sass-debug-info{filename{font-family:"/Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less";}line{font-family:"122";}}
+/* line 154, /Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less */
+@media -sass-debug-info{filename{font-family:"/Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less";}line{font-family:"154";}}
 .wp-post-image {
   margin-bottom: 10px;
 }
