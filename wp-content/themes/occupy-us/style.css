@@ -130,3 +130,18 @@ header a.brand-large {
 .jumbotron::after {
   background: none;
 }
+/* line 156, /Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less */
+@media -sass-debug-info{filename{font-family:"/Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less";}line{font-family:"156";}}
+blockquote {
+  padding: 0 0 0 30px;
+  margin: 0 0 20px;
+  border-left: 10px solid #d5d5d5;
+}
+/* line 162, /Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less */
+@media -sass-debug-info{filename{font-family:"/Users/phillipadsmith/Development/occupy-us.org/wp-content/themes/occupy-us/style.less";}line{font-family:"162";}}
+blockquote p {
+  margin-bottom: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
