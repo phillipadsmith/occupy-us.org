@@ -63,4 +63,12 @@ if ( function_exists( 'add_image_size' ) ) {
   add_image_size( 'bootstrap-small', 260, 180 ); // 260 pixels wide by 180 pixels high
   add_image_size( 'bootstrap-medium', 360, 268 ); // 360 pixels wide by 268 pixels high
   add_image_size( 'bootstrap-wide', 768, 600 ); // 360 pixels wide by 268 pixels high
+} 
+function occupy_posted_on() {
+        printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a>', 'occupy' ),
+                esc_url( get_permalink() ),
+                esc_attr( get_the_time() ),
+                esc_attr( get_the_date( 'c' ) ),
+                esc_html( get_the_date() )
+        );
 }
