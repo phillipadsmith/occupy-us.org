@@ -33,7 +33,6 @@ get_header(); ?>
      <hr />
    </div><!-- /.post_class -->
  <?php endwhile; endif; ?>
- <?php bootstrapwp_content_nav('nav-below');?>
 
 </div><!-- /.span8 -->
 </div><!-- /.row .content -->
