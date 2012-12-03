@@ -64,10 +64,3 @@ if ( function_exists( 'add_image_size' ) ) {
   add_image_size( 'bootstrap-medium', 360, 268 ); // 360 pixels wide by 268 pixels high
   add_image_size( 'bootstrap-wide', 768, 600 ); // 360 pixels wide by 268 pixels high
 }
-
-
-add_filter('wp_get_attachment_url', 'use_thumbnail');
-function use_thumbnail($url) {
-    preg_match('/^(.*)\.gif$/', $url, $matches);
-    return $matches[1] . '-160x120.gif';
-}

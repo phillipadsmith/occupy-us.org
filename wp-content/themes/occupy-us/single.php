@@ -27,7 +27,7 @@ get_header(); ?>
         <p class="meta"><?php echo bootstrapwp_posted_on();?></p>
             <?php the_content();?>
             <?php the_tags( '<p>Tags: ', ', ', '</p>'); ?>
- <?php bootstrapwp_content_nav('nav-below');?>
+<?php bootstrapwp_content_nav('nav-below');?>
 <?php endwhile; // end of the loop. ?>
 <hr />
  <?php comments_template(); ?>
