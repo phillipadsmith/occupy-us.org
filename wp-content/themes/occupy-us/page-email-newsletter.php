@@ -11,6 +11,12 @@
  *
  * Last Revised: Jan 6, 2013
  */
+$page_date  =  get_the_modified_time('Y-m-d');
+$page_title = strtolower( get_the_title() );
+$page_slug =  preg_replace('/\W+/', '-', $page_title ); 
+while ( have_posts() ) : the_post();
+     $page_intro =  get_the_content();
+endwhile; // end of the loop.
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
@@ -18,7 +24,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Occupy America. Issue Two: Student Power</title>
+        <title><?php echo get_the_title(); ?></title>
         <style type="text/css">
             /* Based on The MailChimp Reset INLINE: Yes. */  
             /* Client-specific Styles */
@@ -169,8 +175,12 @@
                             <td valign="top" style="border-collapse: collapse;">
                                 <img src="http://occupy-us.org/emails/logo_with_text.png" class="image_fix" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; display: block;" /> 
                                 <hr style="width: 80%; border-top-color: #ccc; border-top-width: 1px; border-top-style: solid;" />
+<p class="intro" style="">
+<?php echo $page_intro ?>
+</p>
                             </td>
                         </tr>
+                        
 <?php $zone_query = z_get_zone_query( 'email-newsletter-features' );
 if ( $zone_query->have_posts() ) :
     while ( $zone_query->have_posts() ) :
@@ -193,7 +203,7 @@ if ( $zone_query->have_posts() ) :
                                     <tr>
                                         <td width="10" style="border-collapse: collapse;">&nbsp;</td>
                                         <td width="580" style="border-collapse: collapse;">
-                                        <h1 style="color: black !important; font-family: Arial, Helvetica, sans-serif; line-height: 1em;"><a href="http://occupy-us.org/issue-no-2/issue-two-student-power?utm_source=email-dec-03-12&amp;utm_medium=email&amp;utm_campaign=issue-two" style="color: #2e3e68 !important; text-decoration: none;">
+                                        <h1 style="color: black !important; font-family: Arial, Helvetica, sans-serif; line-height: 1em;"><a href="http://occupy-us.org/issue-no-2/issue-two-student-power?utm_source=email-<?php echo $page_date ?>&amp;utm_medium=email&amp;utm_campaign=<?php echo $page_slug ?>" style="color: #2e3e68 !important; text-decoration: none;">
 <?php echo get_the_title() ?></a></h1>
                                                     <p style="font-size: 120%; font-family: Arial, Helvetica, sans-serif; line-height: 1.3em; margin-top: 1em; margin-right: 0; margin-bottom: 1em; margin-left: 0;">
 <?php echo get_the_excerpt(); ?>
